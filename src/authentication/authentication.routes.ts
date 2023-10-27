@@ -1,7 +1,11 @@
 import AuthenticationController from './authentication.controller.js';
 
 const createUser = async (req, res) => {
-    return await AuthenticationController.createUser(req, res);
-}
+  return await AuthenticationController.createUser(req, res);
+};
 
-export default {createUser}
+const loginUser = async (req, res) => {
+  return await AuthenticationController.loginUser(req, res);
+};
+
+export default { createUser, loginUser };

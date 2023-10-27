@@ -4,8 +4,7 @@ import router from './API/api.js';
 
 const app = express();
 app.use(express.json());
-
-const uri = "mongodb+srv://admin:admin@clusterforeventapp.wcivm6z.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:admin@clusterforeventapp.wcivm6z.mongodb.net/event-back?retryWrites=true&w=majority";
 
 mongoose.connect(uri)
     .then(result => {
