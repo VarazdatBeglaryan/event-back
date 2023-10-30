@@ -15,7 +15,7 @@ const authenticate = function(req, res, next) {
 
     try {
         const decoded = jwt.verify(token, SECRET);
-        req.userId = decoded;
+        req.tokenInfo = decoded;
         next();
     } catch (ex) {
         res.status(400).send('Invalid token.');
@@ -25,6 +25,8 @@ const authenticate = function(req, res, next) {
 router.post('/auth/signup', authRoutes.createUser);
 
 router.post('/auth/login', authRoutes.loginUser);
+
+router.post('/auth/logout', authRoutes.loginUser)
 
 router.get('/user', authenticate, userRoutes.getUser);
 

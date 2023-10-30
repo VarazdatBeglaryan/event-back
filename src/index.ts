@@ -14,4 +14,4 @@ mongoose.connect(uri)
             console.log('Listening on port: 3000');
         });
     })
-    .catch(err => console.log('Some Error in DB'));
+    .catch(err => console.log('Some Error in DB', err));

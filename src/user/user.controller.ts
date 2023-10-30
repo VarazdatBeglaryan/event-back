@@ -4,7 +4,7 @@ class UserController {
     constructor () {}
 
     static async getUser(req, res) {
-        const user = await Users.findById(req.userId);
+        const user = await Users.findById(req.tokenInfo.id);
         if (user) {
             const entitzeUser = user.entitize();
             return res.status(200).send({user: entitzeUser});

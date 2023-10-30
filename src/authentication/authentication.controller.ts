@@ -40,7 +40,7 @@ class AuthenticationController {
         );
 
         if (isMatch) {
-            const payload = existingUser._id;
+            const payload = {id: existingUser._id};
             const token = jwt.sign(payload, secret, { expiresIn: '24h' });
             return res.status(200).send({ token });
         }
@@ -50,6 +50,10 @@ class AuthenticationController {
         console.log('error - ', err);
         res.status(400).send({ error: 'Something wen wrong' });
     }
+  }
+
+  static async logout(req, res) {
+    
   }
 }
 
